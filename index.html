@@ -4,409 +4,344 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Jan Hernandez builds websites, web apps and systems for businesses with purpose: booking, payments and the tools that run the business. See the work and hire him.">
-<meta property="og:title" content="Jan Hernandez · Websites, web apps and systems for businesses with purpose">
+<meta property="og:title" content="Jan Hernandez · Websites that bring you customers">
 <meta property="og:description" content="Jan Hernandez builds websites, web apps and systems for businesses with purpose: booking, payments and the tools that run the business. See the work and hire him.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://janhernandezdt-lab.github.io/img/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#131416">
+<meta name="theme-color" content="#ffffff">
 <title>Jan Hernandez</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600&display=swap">
-<style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <style>
-/* Layout: a bright single column, like a printed case-study booklet: big clickable browser frames,
-   ruled lists instead of tiles, one signal color. Dark only (Jan), with no terminal and no tile board. */
+/* Layout: a calm, light page for business owners (Jan, Nov 2026: "less coded, more professional"):
+   one column of plain sections (what I do, the work, try booking, how it works, packages, contact),
+   rounded cards, one accent color, no code-style labels and no tool lists. */
 :root{
-  color-scheme:dark;
-  --bg:#131416; --panel:#1b1d21; --soft:#22252a; --fg:#f4f2ec; --muted:#a4a8af; --rule:#32363d;
-  --a:#ff5c38; --a-ink:#ff8163; --on-a:#1c0c06; --a-soft:#2a1b16;
-  --yes:#4ade80; --care:#fbbf24; --no:#f87171;
-  --display:"Outfit",Inter,system-ui,sans-serif; --body:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+  --bg:#ffffff; --soft:#f4f7fb; --card:#ffffff; --fg:#0f172a; --muted:#56617a; --rule:#e2e8f1;
+  --a:#2563eb; --a-dark:#1d4ed8; --on-a:#ffffff; --a-soft:#eaf1ff;
+  --hero-bg:var(--soft); --hero-fg:var(--fg); --hero-muted:var(--muted);
+  --display:"Plus Jakarta Sans",Inter,system-ui,sans-serif; --body:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --radius:18px; --shadow:0 18px 40px -22px rgb(15 23 42 / .28);
 }
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--body)}
-h1,h2,h3,p{margin:0}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;letter-spacing:-.025em;font-weight:600}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol{margin:0}
+h1,h2,h3{font-family:var(--display);line-height:1.12;letter-spacing:-.02em;text-wrap:balance}
+ul,ol{padding:0;list-style:none}
 a{color:inherit}
+img{display:block;max-width:100%;height:auto}
 button,input,select,textarea{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--a);outline-offset:2px}
-.wrap{max-width:1060px;margin:0 auto;padding-block:14px 56px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-.mono{font:500 12.5px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--a-ink)}
+:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 .muted{color:var(--muted)}
-.grad{color:var(--a)}
-
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-block:8px 18px;border-bottom:1px solid var(--rule)}
-.brand{font:600 18px var(--display);text-decoration:none;display:flex;align-items:center;gap:10px}
-.brand i{width:12px;height:12px;border-radius:50%;background:var(--a);display:block}
-.top nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
-.top nav a{text-decoration:none;color:var(--muted);padding:7px 11px;font-size:15px}
-.top nav a:hover{color:var(--a-ink)}
-.sw{border:1px solid var(--rule);background:var(--panel);border-radius:999px;padding:6px 12px;cursor:pointer;font:500 12.5px var(--mono)}
-.sw:hover{border-color:var(--a)}
-
-.board{display:grid;grid-template-columns:repeat(12,1fr);column-gap:36px;row-gap:0}
-.t{min-width:0;display:grid;gap:12px;align-content:start;transition:transform .55s cubic-bezier(.2,.7,.2,1),opacity .55s}
-.t.pre{transform:translateY(16px);opacity:.5}
-.s12{grid-column:span 12}.s8{grid-column:span 8}.s7{grid-column:span 7}.s6{grid-column:span 6}.s5{grid-column:span 5}.s4{grid-column:span 4}.s3{grid-column:span 3}
-.sec{grid-column:span 12;margin-top:84px;padding-bottom:18px;border-bottom:2px solid var(--fg);display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap}
-.sec h2{font-size:clamp(30px,4vw,44px);line-height:1.05}
-.sec p{color:var(--muted);max-width:30em}
-
-.btns{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.btn{display:inline-block;padding:13px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15.5px;border:1.5px solid var(--fg);background:transparent;cursor:pointer}
-.btn:hover{background:var(--fg);color:var(--bg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 24px;font-weight:600;text-decoration:none;border:1.5px solid var(--rule);background:var(--card);color:var(--fg);cursor:pointer;transition:transform .15s,background .15s,border-color .15s}
+.btn:hover{border-color:var(--a);transform:translateY(-1px)}
 .btn.s{background:var(--a);border-color:var(--a);color:var(--on-a)}
-.btn.s:hover{background:var(--a-ink);border-color:var(--a-ink);color:var(--on-a)}
-.hire .mono{color:#b9300f}
+.btn.s:hover{background:var(--a-dark);border-color:var(--a-dark)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.eyebrow{font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--a)}
 
-.intro{grid-column:span 12;padding-block:64px 44px;gap:20px;max-width:880px}
-.intro h1{font-size:clamp(38px,6.2vw,72px);line-height:1.02}
-.intro p{color:var(--muted);font-size:clamp(18px,2vw,21px);max-width:32em}
-.num{grid-column:span 3;border-top:1px solid var(--rule);padding-block:18px 6px;gap:4px}
-.num b{font:600 clamp(34px,4.4vw,48px)/1 var(--display);font-variant-numeric:tabular-nums;color:var(--fg)}
-.num span{color:var(--muted);font-size:15px}
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:12px}
+.brand{font:700 19px var(--display);text-decoration:none;letter-spacing:-.01em}
+.top nav{display:flex;gap:2px;align-items:center}
+.top nav a.l{text-decoration:none;color:var(--muted);padding:8px 12px;font-size:15.5px;font-weight:500;border-radius:8px}
+.top nav a.l:hover{color:var(--fg);background:var(--soft)}
+.sw{border:1.5px solid var(--rule);background:var(--card);border-radius:999px;padding:7px 13px;cursor:pointer;font-weight:600;font-size:13.5px;margin-inline:6px}
+.sw:hover{border-color:var(--a)}
+.top .btn{padding:9px 18px;font-size:15px}
 
-.proj{grid-column:span 12;grid-template-columns:1fr;gap:26px;padding-block:44px;border-bottom:1px solid var(--rule)}
-.proj .view{order:-1}
-.case{display:grid;grid-template-columns:.8fr 1.2fr;column-gap:36px;row-gap:14px;min-width:0;align-items:start}
-.case > .mono,.case > h3{grid-column:1}
-.case > .pbr,.case > .chips,.case > p{grid-column:2}
-.case > .pbr{grid-row:1 / span 2}
-.case h3{font-size:clamp(34px,4.6vw,54px);line-height:1}
-.pbr{display:grid;gap:12px;margin:0}
-.pbr div{display:grid;grid-template-columns:86px 1fr;gap:14px;align-items:baseline;border-top:1px solid var(--rule);padding-top:12px}
-.pbr dt{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.pbr dd{margin:0}
-.chips{display:flex;flex-wrap:wrap;gap:6px 14px;list-style:none;margin:0;padding:0}
-.chips li{font:500 12.5px var(--mono);color:var(--muted)}
-.chips li::before{content:"· ";color:var(--a)}
-.link{font-weight:600;color:var(--a-ink);text-underline-offset:5px}
-.view{min-width:0;display:grid;gap:12px}
-.tabs{display:flex;gap:6px;flex-wrap:wrap}
-.tab{border:1.5px solid var(--rule);background:var(--panel);border-radius:999px;padding:7px 14px;cursor:pointer;font-size:14px;font-weight:500}
-.tab[aria-selected="true"]{background:var(--fg);border-color:var(--fg);color:var(--bg)}
-.browser{border:1.5px solid var(--fg);border-radius:14px;overflow:hidden;background:var(--panel);box-shadow:10px 10px 0 var(--a)}
-.chrome{display:flex;gap:6px;align-items:center;padding:10px 14px;border-bottom:1.5px solid var(--fg);background:var(--soft)}
-.chrome i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--fg)}
-.chrome span{margin-left:8px;font:500 12px var(--mono);color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.stage{aspect-ratio:16/10;display:grid;place-items:center;overflow:hidden;background:var(--soft)}
-.stage img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
-.stage.phone img{width:auto;height:94%;object-fit:contain;border-radius:18px;border:3px solid var(--fg)}
-.mock{padding:22px;display:grid;gap:12px;align-content:start;max-width:560px}
-.mock label{display:grid;gap:6px;font-size:14px;color:var(--muted)}
-.mock select,.field{padding:12px 13px;border-radius:10px;border:1.5px solid var(--rule);background:var(--panel);width:100%;min-width:0}
-.field:focus,.mock select:focus{border-color:var(--a)}
-.verdict{border-radius:12px;padding:16px;background:var(--soft);display:grid;gap:6px}
-.verdict b{font:600 32px/1 var(--display)}
-.verdict.yes b{color:var(--yes)}.verdict.care b{color:var(--care)}.verdict.no b{color:var(--no)}
+/* hero */
+.hero{background:var(--hero-bg);color:var(--hero-fg)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-block:72px}
+.hero h1{font-size:clamp(36px,4.8vw,58px);font-weight:700}
+.hero h1 em{font-style:normal;color:var(--a)}
+.hero p.lead{font-size:19px;color:var(--hero-muted);max-width:34em;margin-top:18px}
+.hero .btns{margin-top:28px}
+.hero .eyebrow{display:block;margin-bottom:16px}
+.ticks{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:15px;color:var(--hero-muted)}
+.ticks li{display:flex;gap:8px;align-items:center}
+.ticks svg{flex:none;color:var(--a)}
+.shot{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--rule);background:var(--card)}
 
-.small{grid-column:span 5;padding-block:44px}
-.small .case{grid-template-columns:1fr}
-.small .case > *{grid-column:1;grid-row:auto}
-.book{grid-column:span 7;margin-block:44px;background:var(--a-soft);border-radius:18px;padding:28px}
-.book h3,.plain h3{font-size:23px;line-height:1.15}
-.opts{display:flex;flex-wrap:wrap;gap:8px}
-.opt{border:1.5px solid var(--rule);background:var(--panel);border-radius:999px;padding:9px 14px;cursor:pointer;font-size:14.5px}
-.opt[aria-pressed="true"]{border-color:var(--a);background:var(--a);color:var(--on-a);font-weight:600}
-.stepl{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.done{border:1.5px solid var(--a);border-radius:14px;padding:18px;display:grid;gap:8px;background:var(--panel);justify-items:start}
-.done b{font:600 21px var(--display)}
-.note{font-size:14px;color:var(--muted)}
+/* sections */
+section.block{padding-block:84px}
+section.block.tint{background:var(--soft)}
+.head{max-width:680px;margin-bottom:40px}
+.head h2{font-size:clamp(29px,3.4vw,40px);font-weight:700}
+.head p{margin-top:12px;color:var(--muted);font-size:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:var(--radius);padding:28px;display:grid;gap:12px;align-content:start}
+.card h3{font-size:21px;font-weight:700}
+.card p{color:var(--muted)}
+.ico{width:46px;height:46px;border-radius:12px;background:var(--a-soft);color:var(--a);display:grid;place-items:center}
+.list{display:grid;gap:8px;font-size:16px;margin-top:4px}
+.list li{display:flex;gap:10px;align-items:flex-start}
+.list svg{flex:none;margin-top:5px;color:var(--a)}
 
-.plain{grid-column:span 6;border-bottom:1px solid var(--rule);padding-block:22px;grid-template-columns:.9fr 1.1fr;column-gap:20px}
-.plain h3{font-size:20px}
-.plain p{color:var(--muted);font-size:16px}
-.aside{grid-column:span 5;margin-block:44px;align-content:center;gap:14px}
-.aside p{color:var(--muted)}
-.wide{grid-column:span 12;padding-top:30px}
-.plain.ask h3{font-weight:500}
-.hood{grid-column:span 12;padding-top:44px}
-.how{grid-column:span 12;padding-top:44px;max-width:760px}
-.kit{display:grid;gap:22px;margin-top:6px}
-.kitg{display:grid;gap:10px}
-.kitl{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
-.kitl li{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--rule);border-radius:999px;padding:8px 16px 8px 8px;font-weight:600;font-size:15.5px}
-.kitl i{font:700 11px/1 var(--mono);font-style:normal;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;letter-spacing:0}
+/* work */
+.feature{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;background:var(--card);border:1px solid var(--rule);border-radius:var(--radius);padding:28px;margin-bottom:22px}
+.feature h3{font-size:26px;font-weight:700}
+.kind{font-size:14px;font-weight:600;color:var(--a)}
+.go{font-weight:600;color:var(--a);text-decoration:none}
+.go:hover{text-decoration:underline}
+.did{display:grid;gap:6px;font-size:16px}
+.did b{font-weight:600}
 
-.hood h3,.how h3{font-size:24px}
-.spec{font:400 13.5px var(--mono);display:grid}
-.spec div{display:grid;grid-template-columns:118px 1fr;gap:12px;padding-block:10px;border-bottom:1px solid var(--rule)}
-.spec span:first-child{color:var(--a-ink);text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+/* booking demo */
+.try{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:center}
+.demo{background:var(--card);border:1px solid var(--rule);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.stepl{font-size:14px;font-weight:600;color:var(--muted);display:block;margin-bottom:8px}
+.opts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.opt{border:1.5px solid var(--rule);background:var(--card);border-radius:999px;padding:8px 15px;cursor:pointer;font-size:15px}
+.opt:hover{border-color:var(--a)}
+.opt[aria-pressed="true"]{background:var(--a);border-color:var(--a);color:var(--on-a);font-weight:600}
+.done{display:grid;gap:10px}
+.done b{font:700 22px var(--display)}
+.note{color:var(--muted);font-size:14.5px}
 
-.pack{grid-column:span 4;padding-block:28px;border-bottom:1px solid var(--rule)}
-.pack h3{font-size:24px;line-height:1.1}
-.pack ul{margin:0;padding-left:18px;display:grid;gap:6px;color:var(--muted);font-size:16px}
-.hire{grid-column:span 12;grid-template-columns:.8fr 1.2fr;column-gap:36px;row-gap:24px;margin-top:44px;padding:36px;background:var(--fg);color:var(--bg);border-radius:20px}
-.hire h3{font-size:clamp(28px,3.6vw,40px);line-height:1.05}
-.hire .field{background:#ffffff;border-color:#cfcabf;color:var(--bg)}
-.hire form label{color:#4a4e55}
-.hire .btn{border-color:var(--bg)}
-.hire .btn:hover{background:var(--bg);color:var(--fg)}
-.hire .btn.s{border-color:var(--a)}
-.hire .btn.s:hover{background:var(--a-ink);color:var(--on-a)}
-.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
-.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px;color:#4a4e55}
-.steps li::before{content:counter(s);font:600 16px var(--mono);color:#c2330f}
-.steps b{color:var(--bg);font-weight:600}
-form{display:grid;gap:12px;min-width:0}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-form label{display:grid;gap:6px;font-size:14px}
-textarea.field{min-height:96px;resize:vertical}
-.msg{border:1.5px dashed var(--a);border-radius:12px;padding:14px;display:grid;gap:10px}
-.msg pre{margin:0;white-space:pre-wrap;font:400 13.5px/1.6 var(--mono);user-select:all}
-.todo{color:#b9300f}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--rule);border-radius:var(--radius);padding:28px;display:grid;gap:8px;align-content:start}
+.steps li::before{content:counter(s);width:40px;height:40px;border-radius:50%;background:var(--a);color:var(--on-a);display:grid;place-items:center;font:700 18px var(--display);margin-bottom:6px}
+.steps h3{font-size:20px;font-weight:700}
+.steps p{color:var(--muted)}
 
-.foot{grid-column:span 12;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:14px;padding-top:36px}
-.foot a{color:var(--muted)}
+/* contact */
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:start}
+form{display:grid;gap:14px;background:var(--card);border:1px solid var(--rule);border-radius:var(--radius);padding:28px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:6px;font-size:15px;font-weight:600}
+.field{width:100%;border:1.5px solid var(--rule);border-radius:10px;padding:11px 13px;background:var(--bg);font-weight:400}
+.field:focus{border-color:var(--a);outline:none}
+textarea.field{min-height:110px;resize:vertical}
+.msg{display:grid;gap:12px;background:var(--a-soft);border-radius:12px;padding:16px}
+.msg pre{margin:0;white-space:pre-wrap;font:inherit}
+.foot{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14.5px}
+.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.foot a{color:inherit}
 
-@media (max-width:900px){
-  .board{column-gap:20px}
-  .small,.book,.hood,.how,.plain,.aside{grid-column:span 12}
-  .aside{margin-block:0 20px}
-  .num{grid-column:span 6}
-  .pack{grid-column:span 12}
-  .case,.hire{grid-template-columns:1fr}
-  .case > *{grid-column:1 !important;grid-row:auto !important}
-  .top{row-gap:4px}
-  .top nav{order:3;flex:0 0 100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-6px}
-  .top nav::-webkit-scrollbar{display:none}
-  .top nav a{white-space:nowrap;padding:8px 10px}
-  .top nav .sw{position:absolute;right:max(20px,env(safe-area-inset-right,0px));top:calc(env(safe-area-inset-top,0px) + 20px)}
-  .wrap{position:relative}
-  .sec{margin-top:60px}
-  .book{margin-block:8px 0}
+@media (max-width:860px){
+  body{font-size:16.5px}
+  .top nav a.l{display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:32px;padding-block:48px}
+  section.block{padding-block:60px}
+  .grid3,.grid2,.steps,.feature,.try,.contact,.two{grid-template-columns:1fr}
+  .feature{gap:22px;padding:20px}
+  .card,.demo,form,.steps li{padding:22px}
+  .try,.contact{gap:26px}
 }
-@media (max-width:560px){
-  .intro{padding-block:40px 30px}
-  .plain{grid-template-columns:1fr}
-  .two{grid-template-columns:1fr}
-  .pbr div,.spec div{grid-template-columns:1fr;gap:2px}
-  .hire,.book{padding:22px}
-  .browser{box-shadow:6px 6px 0 var(--a)}
-}
-@media (prefers-reduced-motion:reduce){.t{transition:none}.t.pre{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <a class="brand" href="#top"><i></i>Jan Hernandez</a>
-    <nav aria-label="Sections">
-      <a href="#help" data-es="Cómo ayudo">How I help</a>
-      <a href="#work" data-es="Proyectos">Work</a>
-      <a href="#try" data-es="Pruébalo">Try it</a>
-      <a href="#build" data-es="Qué construyo">What I build</a>
-      <a href="#hire" data-es="Contrátame">Hire me</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Jan Hernandez</a>
+    <nav aria-label="Main">
+      <a class="l" href="#services" data-es="Servicios">Services</a>
+      <a class="l" href="#work" data-es="Proyectos">Work</a>
+      <a class="l" href="#how" data-es="Cómo funciona">How it works</a>
       <button class="sw" id="lang" type="button" aria-label="Cambiar a español">ES</button>
+      <a class="btn s" href="#contact" data-es="Pide tu cotización">Get a quote</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main class="board" id="top">
-    <section class="t intro">
-      <span class="mono" data-es="Sitios web, aplicaciones web y sistemas para negocios con propósito">Websites, web apps and systems for businesses with purpose</span>
-      <h1 data-es-html="Construyo sitios y aplicaciones web que <span class='grad'>manejan un negocio.</span>">I build websites and web apps that <span class="grad">run a business.</span></h1>
-      <p data-es="Más reservas, menos llamadas y pagos que se cobran solos. Construyo el sitio y el sistema detrás: reservas, pagos, cuentas para clientes, mensajes automáticos y funciones con IA.">More bookings, fewer phone calls and payments that collect themselves. I build the website and the system behind it: booking, payments, customer logins, automatic messages and AI features.</p>
-      <div class="btns">
-        <a class="btn s" href="#hire" data-es="Contrátame">Hire me</a>
-        <a class="btn" href="https://app.petklndr.com/demo" data-es="Abrir una demo en vivo">Open a live demo</a>
-      </div>
-    </section>
-
-    <div class="t num"><b class="grad" data-count="4">4</b><span data-es="sitios y aplicaciones en línea con su propio dominio">sites and apps live on their own domains</span></div>
-    <div class="t num"><b class="grad" data-count="137">137</b><span data-es="versiones publicadas desde octubre de 2026">releases shipped since October 2026</span></div>
-    <div class="t num"><b class="grad" data-count="1300" data-suffix="+">1,300+</b><span data-es="páginas hechas para Google, en dos idiomas">pages built for Google, in two languages</span></div>
-    <div class="t num"><b class="grad" data-count="1500" data-suffix="+">1,500+</b><span data-es="pruebas automáticas antes de cada versión">automated tests before each release</span></div>
-
-    <section class="t how" data-who>
-      <h3 data-es="Con quién trabajo">Who I work with</h3>
-      <p class="muted" data-es="Negocios de servicios, tiendas locales, estudios y organizaciones sin fines de lucro: equipos pequeños que quieren más clientes y menos trabajo repetido.">Service businesses, local shops, studios and nonprofits: small teams that want more customers and less busywork.</p>
-    </section>
-
-    <div class="sec" id="help">
-      <h2 data-es="Cómo puedo ayudarte">How I can help</h2>
-      <p data-es="Si algo de esto se parece a tu semana, lo puedo resolver.">If any of this sounds like your week, I can fix it.</p>
-    </div>
-    <div class="t plain ask" data-help><h3 data-es="Los clientes tienen que llamar para reservar, y pierdes llamadas mientras trabajas.">Customers have to call to book, and you miss calls while you work.</h3><p data-es="Reservas en línea en tu sitio que llegan directo a tu calendario.">Online booking on your site that lands straight in your calendar.</p></div>
-    <div class="t plain ask" data-help><h3 data-es="Envías facturas a mano y persigues los pagos.">You send invoices by hand and chase payments.</h3><p data-es="Facturas que se envían solas y pagos con tarjeta en tu propio sitio.">Invoices that send themselves and card payments on your own site.</p></div>
-    <div class="t plain ask" data-help><h3 data-es="La gente olvida sus citas.">People forget their appointments.</h3><p data-es="Recordatorios y confirmaciones automáticos por correo y mensaje de texto.">Automatic reminders and confirmations by email and text.</p></div>
-    <div class="t plain ask" data-help><h3 data-es="Tu sitio se ve bien pero no trae clientes.">Your website looks fine but doesn't bring in customers.</h3><p data-es="Páginas hechas para que Google las encuentre, en inglés, español o ambos.">Pages built so Google can find them, in English, Spanish or both.</p></div>
-    <div class="t plain ask" data-help><h3 data-es="Manejas el negocio con cinco aplicaciones y una libreta.">You run the business from five apps and a notebook.</h3><p data-es="Un solo sistema hecho para la forma en que trabaja tu negocio.">One system made for the way your business works.</p></div>
-    <div class="t plain ask" data-help><h3 data-es="Respondes las mismas preguntas todo el día.">You answer the same questions all day.</h3><p data-es="Una cuenta donde cada cliente ve sus reservas, facturas y novedades.">A login where each customer sees their own bookings, invoices and updates.</p></div>
-    <div class="t wide">
-      <div class="btns">
-        <a class="btn s" href="#contact" data-es="Cuéntame qué necesitas">Tell me what you need</a>
-        <a class="btn" href="#work" data-es="Ver los proyectos">See the work</a>
-      </div>
-    </div>
-
-    <div class="sec" id="work">
-      <h2 data-es="Proyectos">The work</h2>
-      <p data-es="Cuatro proyectos en línea hoy. Toca las pestañas para verlos por dentro.">Four projects live today. Tap the tabs to look inside.</p>
-    </div>
-
-    <article class="t proj">
-      <div class="case">
-        <span class="mono" data-es="Aplicación web + sitio de ventas">Web app + marketing site</span>
-        <h3>PetKlndr</h3>
-        <dl class="pbr">
-          <div><dt data-es="Problema">Problem</dt><dd data-es="Un negocio pequeño usaba cinco aplicaciones: agenda, formularios, facturas, recordatorios y una libreta.">A small business was juggling five apps: scheduling, forms, invoices, reminders and a notebook.</dd></div>
-          <div><dt data-es="Solución">Built</dt><dd data-es="Una sola aplicación: clientes, calendario, reservas en línea, propuestas, firmas, facturas, pagos con tarjeta, portal del cliente y notas escritas con IA.">One app: CRM, calendar, online booking, proposals, e-signatures, invoices, card payments, a client portal and AI-written notes.</dd></div>
-          <div><dt data-es="Resultado">Result</dt><dd data-es="Maneja un negocio real todos los días y está abierto a otros negocios por suscripción mensual.">Runs a real business every day and is open to other businesses on a monthly subscription.</dd></div>
-        </dl>
-        <ul class="chips"><li>SaaS</li><li>Subscriptions</li><li>Google Calendar</li><li>QuickBooks</li><li>Stripe + Square</li><li>Twilio</li><li>AI</li></ul>
-        <p><a class="link" href="https://www.petklndr.com">petklndr.com →</a></p>
-      </div>
-      <div class="view" data-view>
-        <div class="tabs" role="tablist" aria-label="PetKlndr screens">
-          <button class="tab" role="tab" aria-selected="true" data-src="img/dashboard.jpg" data-url="app.petklndr.com/dashboard" data-es="Panel">Dashboard</button>
-          <button class="tab" role="tab" aria-selected="false" data-src="img/calendar.jpg" data-url="app.petklndr.com/calendar" data-es="Calendario">Calendar</button>
-          <button class="tab" role="tab" aria-selected="false" data-src="img/client.jpg" data-url="app.petklndr.com/clients" data-es="Cliente">Client page</button>
-          <button class="tab" role="tab" aria-selected="false" data-src="img/phone-dashboard.jpg" data-url="app.petklndr.com" data-phone="1" data-es="Teléfono">On a phone</button>
-          <button class="tab" role="tab" aria-selected="false" data-src="img/phone-calendar.jpg" data-url="app.petklndr.com/calendar" data-phone="1" data-es="Agenda móvil">Phone calendar</button>
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow" data-es="Sitios web, aplicaciones web y sistemas para negocios con propósito">Websites, web apps and systems for businesses with purpose</span>
+        <h1 data-es-html="Un sitio web que te trae clientes <em>y trabaja por ti.</em>">A website that brings you customers <em>and does the work for you.</em></h1>
+        <p class="lead" data-es="Construyo sitios donde tus clientes reservan, pagan y reciben recordatorios por su cuenta. Más reservas, menos llamadas y menos trabajo repetido para ti.">I build websites where your customers book, pay and get reminders on their own. More bookings, fewer phone calls and less busywork for you.</p>
+        <div class="btns">
+          <a class="btn s" href="#contact" data-es="Pide una cotización gratis">Get a free quote</a>
+          <a class="btn" href="#work" data-es="Ver mi trabajo">See my work</a>
         </div>
-        <div class="browser">
-          <div class="chrome"><i></i><i></i><i></i><span data-urlbar>app.petklndr.com/dashboard</span></div>
-          <div class="stage" data-stage><img src="img/dashboard.jpg" alt="PetKlndr dashboard" width="1200" height="750"></div>
+        <ul class="ticks">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="4 sitios y aplicaciones en línea">4 sites and apps live today</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Inglés y español">English and Spanish</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Pensado primero para el teléfono">Built for phones first</span></li>
+        </ul>
+      </div>
+      <div class="shot"><img src="img/dashboard.jpg" alt="A business dashboard I built: today's appointments, clients and payments" width="1200" height="750"></div>
+    </div>
+  </div>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-es="Lo que puedo hacer por tu negocio">What I can do for your business</h2>
+        <p data-es="Tres formas de ayudarte, según lo que necesites hoy.">Three ways I can help, depending on what you need today.</p>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/></svg></span>
+          <h3 data-es="Un sitio que trae clientes">A website that brings customers</h3>
+          <p data-es="Un sitio con tu propio estilo, claro y rápido, hecho para que te encuentren en Google.">A site with your own look, clear and fast, made so people find you on Google.</p>
+          <ul class="list">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Tu propio diseño, no una plantilla">Your own design, not a template</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Se ve bien en cualquier teléfono">Looks right on every phone</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="En inglés, español o ambos">English, Spanish or both</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M9 15l2 2 4-4"/></svg></span>
+          <h3 data-es="Reservas y pagos en tu sitio">Booking and payments on your site</h3>
+          <p data-es="Tus clientes eligen una hora y pagan sin llamarte. Tú solo ves llegar las citas.">Customers pick a time and pay without calling you. You just watch the appointments come in.</p>
+          <ul class="list">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Las reservas llegan a tu calendario">Bookings land in your calendar</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Facturas y pagos con tarjeta">Invoices and card payments</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Recordatorios por correo y mensaje">Reminders by email and text</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+          <h3 data-es="Un sistema para manejar tu negocio">A system that runs your business</h3>
+          <p data-es="Un solo lugar para tus clientes, tu agenda y tus cobros, hecho a la medida de cómo trabajas.">One place for your customers, your schedule and your payments, made for the way you work.</p>
+          <ul class="list">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Una cuenta para cada cliente">A login for each customer</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Mensajes que se envían solos">Messages that send themselves</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Conectado con lo que ya usas">Connected to what you already use</span></li>
+          </ul>
         </div>
       </div>
-    </article>
+    </div>
+  </section>
 
-    <article class="t proj">
-      <div class="case">
-        <span class="mono" data-es="Sitio de contenido + herramientas gratis">Content site + free tools</span>
-        <h3>Woofvio</h3>
-        <dl class="pbr">
-          <div><dt data-es="Problema">Problem</dt><dd data-es="La gente busca respuestas rápidas y encuentra artículos largos llenos de anuncios.">People search for a quick answer and land on long articles full of ads.</dd></div>
-          <div><dt data-es="Solución">Built</dt><dd data-es="Más de 1,300 páginas con la respuesta arriba, un buscador en todo el sitio, una docena de calculadoras y una versión en español de cada respuesta.">1,300+ pages with the answer at the top, site-wide search, a dozen calculators, and a Spanish twin of every answer.</dd></div>
-          <div><dt data-es="Resultado">Result</dt><dd data-es="Google leyó todo el mapa del sitio y las primeras visitas llegaron por búsquedas en español.">Google read the full sitemap, and the first search clicks came from Spanish searches.</dd></div>
-        </dl>
-        <ul class="chips"><li>SEO</li><li>EN + ES</li><li>Search</li><li>Live weather</li><li>Structured data</li></ul>
-        <p><a class="link" href="https://www.woofvio.com">woofvio.com →</a></p>
+  <section class="block tint" id="work">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-es="Mi trabajo">My work</h2>
+        <p data-es="Cuatro proyectos en línea hoy. Cada uno resuelve un problema real de un negocio.">Four projects live today. Each one solves a real problem for a business.</p>
       </div>
-      <div class="view">
-        <div class="browser">
-          <div class="chrome"><i></i><i></i><i></i><span>woofvio.com/tools/can-dogs-eat</span></div>
-          <div class="mock">
-            <label for="food"><span data-es="Elige un alimento (demo en vivo)">Pick a food (live demo)</span>
-              <select id="food"></select>
-            </label>
-            <div class="verdict" id="foodOut" aria-live="polite"></div>
-            <p class="note" data-es="Una copia funcional de una herramienta del sitio. No sustituye a tu veterinario.">A working copy of one tool from the site. Not a substitute for your vet.</p>
+      <article class="feature" data-project="petklndr">
+        <div class="shot"><img src="img/calendar.jpg" alt="PetKlndr calendar with a week of appointments" width="1200" height="750" loading="lazy"></div>
+        <div style="display:grid;gap:12px">
+          <span class="kind" data-es="Sistema para negocios">Business system</span>
+          <h3>PetKlndr</h3>
+          <div class="did">
+            <p><b data-es="El problema: ">The problem: </b><span data-es="un negocio pequeño usaba cinco aplicaciones y una libreta para agenda, formularios, facturas y recordatorios.">a small business was using five apps and a notebook for scheduling, forms, invoices and reminders.</span></p>
+            <p><b data-es="Lo que construí: ">What I built: </b><span data-es="una sola aplicación con clientes, calendario, reservas en línea, facturas, pagos con tarjeta y una cuenta para cada cliente.">one app with customers, calendar, online booking, invoices, card payments and a login for each customer.</span></p>
+            <p><b data-es="El resultado: ">The result: </b><span data-es="maneja un negocio real todos los días y está abierta a otros negocios por suscripción.">it runs a real business every day and is open to other businesses by subscription.</span></p>
+          </div>
+          <div class="btns" style="align-items:center;gap:18px">
+            <a class="go" href="https://www.petklndr.com" data-es="Visitar petklndr.com →">Visit petklndr.com →</a>
+            <a class="go" href="https://app.petklndr.com/demo" data-es="Probar la demo en vivo →">Try the live demo →</a>
           </div>
         </div>
+      </article>
+      <div class="grid3">
+        <article class="card" data-project="woofvio">
+          <span class="kind" data-es="Sitio de contenido">Content website</span>
+          <h3>Woofvio</h3>
+          <p data-es="Más de 1,300 páginas con respuestas rápidas para dueños de perros, en inglés y español, hechas para Google.">1,300+ pages of quick answers for dog owners, in English and Spanish, built for Google.</p>
+          <p><b data-es="Resultado: ">Result: </b><span data-es="los primeros clics de búsqueda llegaron desde búsquedas en español.">the first search clicks came from Spanish searches.</span></p>
+          <a class="go" href="https://www.woofvio.com" data-es="Visitar woofvio.com →">Visit woofvio.com →</a>
+        </article>
+        <article class="card" data-project="safe-paws">
+          <span class="kind" data-es="Sitio de negocio local">Local business website</span>
+          <h3>Safe Paws</h3>
+          <p data-es="Botones de reserva que agendan directo en el calendario, más una cuenta para cada cliente.">Booking buttons that drop straight into the calendar, plus a login for every client.</p>
+          <p><b data-es="Resultado: ">Result: </b><span data-es="las citas llegan solas, con recordatorios automáticos.">appointments arrive on their own, with automatic reminders.</span></p>
+          <a class="go" href="https://safepawsdogtraining.com" data-es="Visitar el sitio →">Visit the site →</a>
+        </article>
+        <article class="card" data-project="kingdom-peptides">
+          <span class="kind" data-es="Sitio de catálogo">Catalog website</span>
+          <h3>Kingdom Peptides</h3>
+          <p data-es="Un catálogo con una página por producto y un botón para solicitar precio, en lugar de una lista de precios pública.">A catalog with a page for each product and a Request Pricing button, instead of a public price list.</p>
+          <p><b data-es="Resultado: ">Result: </b><span data-es="en línea en su propio dominio.">live on its own domain.</span></p>
+          <a class="go" href="https://kingdom-peptides.com/products/" data-es="Visitar el sitio →">Visit the site →</a>
+        </article>
       </div>
-    </article>
-
-    <article class="t small">
-      <div class="case">
-        <span class="mono" data-es="Sitio web de negocio local">Local business website</span>
-        <h3>Safe Paws</h3>
-        <dl class="pbr">
-          <div><dt data-es="Problema">Problem</dt><dd data-es="Las visitas llamaban o escribían para pedir cita, y había que responder una por una.">Visitors had to call or message to book, and every request was answered by hand.</dd></div>
-          <div><dt data-es="Solución">Built</dt><dd data-es="Botones de reserva que agendan directo en el calendario, más una cuenta para cada cliente.">Booking buttons that drop straight into the calendar, plus a login for every client.</dd></div>
-          <div><dt data-es="Resultado">Result</dt><dd data-es="Las citas llegan solas, con recordatorios automáticos.">Appointments arrive on their own, with automatic reminders.</dd></div>
-        </dl>
-        <p><a class="link" href="https://safepawsdogtraining.com">safepawsdogtraining.com →</a></p>
-      </div>
-    </article>
-
-    <article class="t small" data-project="kingdom-peptides">
-      <div class="case">
-        <span class="mono" data-es="Sitio web de catálogo">Catalog website</span>
-        <h3>Kingdom Peptides</h3>
-        <dl class="pbr">
-          <div><dt data-es="Problema">Problem</dt><dd data-es="Un proveedor nuevo necesitaba un catálogo profesional donde los compradores piden precio, en vez de una lista de precios pública.">A new supplier needed a professional catalog where buyers request pricing instead of reading a public price list.</dd></div>
-          <div><dt data-es="Solución">Built</dt><dd data-es="Un catálogo con una página por producto, un flujo de “Solicitar precio”, avisos de uso en cada página y páginas de recursos, acerca de y contacto.">A catalog with a page for each product, a Request Pricing flow, usage notices on every page, and Resources, About and Contact pages.</dd></div>
-          <div><dt data-es="Resultado">Result</dt><dd data-es="En línea en su propio dominio.">Live on its own domain.</dd></div>
-        </dl>
-        <p><a class="link" href="https://kingdom-peptides.com/products/">kingdom-peptides.com →</a></p>
-      </div>
-    </article>
-
-    <div class="t aside" data-book-note>
-      <h3 data-es="Tus clientes reservan sin llamarte.">Your customers book without calling you.</h3>
-      <p data-es="Eligen el servicio, el día y la hora. La cita llega a tu calendario y ellos reciben una confirmación y un recordatorio.">They pick the service, the day and the time. The appointment lands in your calendar, and they get a confirmation and a reminder.</p>
-      <p data-es="Pruébalo aquí: así se siente en un sitio que yo construyo.">Try it here: this is how it feels on a site I build.</p>
     </div>
-    <section class="t book" id="try" aria-label="Booking demo">
-      <span class="mono" data-es="Pruébalo · demo de reservas">Try it · booking demo</span>
-      <h3 data-es="Así reserva un cliente en un sitio que yo construyo.">This is how a customer books on a site I build.</h3>
-      <div id="bk">
-        <div style="display:grid;gap:12px">
-          <span class="stepl" data-es="1 · Servicio">1 · Service</span>
+  </section>
+
+  <section class="block" id="try" aria-label="Booking demo">
+    <div class="wrap try">
+      <div class="head" style="margin:0">
+        <h2 data-es="Pruébalo: así reserva un cliente">Try it: this is how a customer books</h2>
+        <p data-es="Eligen el servicio, el día y la hora. La cita llega a tu calendario y ellos reciben una confirmación y un recordatorio. Sin llamadas.">They pick the service, the day and the time. The appointment lands in your calendar, and they get a confirmation and a reminder. No phone calls.</p>
+      </div>
+      <div class="demo">
+        <div id="bk">
+          <span class="stepl" data-es="1. Servicio">1. Service</span>
           <div class="opts" id="bkSvc"></div>
-          <span class="stepl" data-es="2 · Día">2 · Day</span>
+          <span class="stepl" data-es="2. Día">2. Day</span>
           <div class="opts" id="bkDay"></div>
-          <span class="stepl" data-es="3 · Hora">3 · Time</span>
+          <span class="stepl" data-es="3. Hora">3. Time</span>
           <div class="opts" id="bkTime"></div>
-          <div class="btns"><button class="btn s" id="bkGo" type="button" data-es="Confirmar reserva">Confirm booking</button></div>
+          <button class="btn s" id="bkGo" type="button" data-es="Confirmar reserva">Confirm booking</button>
+        </div>
+        <div class="done" id="bkDone" hidden aria-live="polite"></div>
+        <p class="note" style="margin-top:14px" data-es="Solo es una demostración. No se reserva ni se envía nada.">Demo only. Nothing is booked and nothing is sent.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block tint" id="how">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-es="Cómo funciona">How it works</h2>
+        <p data-es="Tres pasos sencillos, sin lenguaje técnico.">Three simple steps, no technical talk.</p>
+      </div>
+      <ol class="steps">
+        <li><h3 data-es="Hablamos">We talk</h3><p data-es="Me cuentas de tu negocio y qué debe hacer el sitio. Recibes una cotización para tu proyecto.">You tell me about your business and what the site has to do. You get a quote for your project.</p></li>
+        <li><h3 data-es="Ves un borrador real">You see a real draft</h3><p data-es="Una página que funciona, en tu teléfono y tu computadora, para que opines antes de publicar.">A working page, on your phone and your computer, so you can give feedback before it goes live.</p></li>
+        <li><h3 data-es="Lo publicamos">We go live</h3><p data-es="En tu propia dirección web, y te enseño a actualizarlo.">On your own web address, with a walkthrough of how to update it.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="hire">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-es="Elige por dónde empezar">Pick where to start</h2>
+        <p data-es="Cada proyecto recibe su propia cotización, según lo que necesites.">Every project gets its own quote, based on what you need.</p>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <span class="kind" data-es="Empezar">Starter</span>
+          <h3 data-es="Un sitio para tu negocio">A website for your business</h3>
+          <ul class="list">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Tu propio diseño, no una plantilla">Your own design, not a template</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Pensado primero para el teléfono">Built for phones first</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Preparado para que Google lo encuentre">Set up so Google can find it</span></li>
+          </ul>
+        </div>
+        <div class="card" style="border-color:var(--a);box-shadow:var(--shadow)">
+          <span class="kind" data-es="Crecer">Growth</span>
+          <h3 data-es="Sitio + reservas y pagos">Website + booking and payments</h3>
+          <ul class="list">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Todo lo del sitio básico">Everything in Starter</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Tus clientes reservan y pagan en tu sitio">Customers book and pay on your site</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Recordatorios automáticos">Automatic reminders</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="kind" data-es="A medida">Custom</span>
+          <h3 data-es="Un sistema a tu medida">A system made for you</h3>
+          <ul class="list">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Cuentas para clientes y paneles">Customer logins and dashboards</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Herramientas que te ahorran tiempo">Tools that save you time</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Conectado con lo que ya usas">Connected to what you already use</span></li>
+          </ul>
         </div>
       </div>
-      <div class="done" id="bkDone" hidden aria-live="polite"></div>
-      <p class="note" data-es="Solo es una demostración. No se reserva nada ni se envía ningún dato.">Demo only. Nothing is booked and nothing is sent.</p>
-    </section>
+    </div>
+  </section>
 
-    <div class="sec" id="build">
-      <h2 data-es="Qué construyo">What I build</h2>
-      <p data-es="Todo esto ya funciona en alguno de los tres productos.">All of it is already running in one of the three products.</p>
-    </div>
-    <div class="t plain"><h3 data-es="Sitios que venden">Websites that sell</h3><p data-es="Precios, páginas de funciones, guías y un diseño propio, pensado primero para el teléfono.">Pricing, feature pages, guides and a look of your own, built for phones first.</p></div>
-    <div class="t plain"><h3 data-es="Aplicaciones web completas">Full web apps</h3><p data-es="Cuentas, equipos y permisos, paneles, calendarios e informes.">Logins, teams and permissions, dashboards, calendars and reports.</p></div>
-    <div class="t plain"><h3 data-es="Reservas y pagos">Booking + payments</h3><p data-es="Reservas en línea, depósitos, facturas, tarjetas, planes de pago, membresías y tarjetas de regalo.">Online booking, deposits, invoices, cards, payment plans, memberships and gift cards.</p></div>
-    <div class="t plain"><h3 data-es="Conexiones">Connections</h3><p data-es="Google Calendar, Gmail, QuickBooks, Stripe, Square, Twilio, Mailchimp, Calendly y Zapier.">Google Calendar, Gmail, QuickBooks, Stripe, Square, Twilio, Mailchimp, Calendly and Zapier.</p></div>
-    <div class="t plain"><h3 data-es="Funciones con IA">AI features</h3><p data-es="Notas a partir de unas palabras, borradores de respuestas y asistentes que configuran un sitio o un correo.">Notes from a few spoken words, reply drafts, and helpers that set up a site or an email.</p></div>
-    <div class="t plain"><h3 data-es="Mensajes automáticos">Automatic messages</h3><p data-es="Recordatorios, confirmaciones, seguimientos y agradecimientos que se envían solos.">Reminders, confirmations, follow-ups and thank-you emails that send themselves.</p></div>
-
-    <section class="t how">
-      <h3 data-es="Cómo trabajo">How I work</h3>
-      <p class="muted" data-es="Yo decido qué se construye, cómo se ve y si está lo bastante bien, y pruebo cada función con clientes reales antes de publicarla.">I decide what gets built, how it looks and whether it's good enough, and I test every feature with real customers before it ships.</p>
-      <p class="muted" data-es="Uso IA como compañera de desarrollo. Así una sola persona publicó 137 versiones en unas seis semanas.">I use AI as my development partner. That is how one person shipped 137 releases in about six weeks.</p>
-      <p class="muted" data-es="Recibes un borrador real en el que puedes hacer clic, no una maqueta.">You get a real draft you can click through, not a mock-up.</p>
-    </section>
-
-    <div class="sec" id="hire">
-      <h2 data-es="Contrátame">Hire me</h2>
-      <p data-es="Tres formas de empezar. Cada proyecto recibe su propio presupuesto.">Three ways to start. Every project gets its own quote.</p>
-    </div>
-    <div class="t pack">
-      <span class="mono" data-es="Empezar">Starter</span>
-      <h3 data-es="Un sitio para tu negocio">A website for your business</h3>
-      <ul>
-        <li data-es="Tu propio diseño, no una plantilla">Your own look, not a template</li>
-        <li data-es="Pensado primero para el teléfono">Built for phones first</li>
-        <li data-es="Preparado para que Google lo encuentre">Set up so Google can find it</li>
-        <li data-es="En inglés, español o ambos">English, Spanish or both</li>
-      </ul>
-    </div>
-    <div class="t pack">
-      <span class="mono" data-es="Crecer">Growth</span>
-      <h3 data-es="Sitio + reservas y pagos">Site + booking and payments</h3>
-      <ul>
-        <li data-es="Todo lo del sitio básico">Everything in Starter</li>
-        <li data-es="Tus clientes reservan y pagan en tu sitio">Customers book and pay on your site</li>
-        <li data-es="Recordatorios por correo y mensaje de texto">Reminders by email and text</li>
-        <li data-es="Conectado a tu calendario">Connected to your calendar</li>
-      </ul>
-    </div>
-    <div class="t pack">
-      <span class="mono" data-es="A medida">Custom</span>
-      <h3 data-es="Una aplicación web a tu medida">A web app made for you</h3>
-      <ul>
-        <li data-es="Cuentas para clientes y paneles">Customer logins and dashboards</li>
-        <li data-es="Calculadoras y herramientas en tu sitio">Calculators and tools on your site</li>
-        <li data-es="Funciones con IA que ahorran tiempo">AI features that save you time</li>
-        <li data-es="Conexiones con lo que ya usas">Connections to what you already use</li>
-      </ul>
-    </div>
-
-    <section class="t hire" id="contact">
-      <div style="display:grid;gap:16px;align-content:start;min-width:0">
-        <h3 data-es="Cuéntame qué necesita tu negocio.">Tell me what your business needs.</h3>
-        <ol class="steps">
-          <li><span><b data-es="Hablamos.">We talk.</b> <span data-es="Me cuentas de tu negocio y qué debe hacer el sitio.">You tell me about your business and what the site has to do.</span></span></li>
-          <li><span><b data-es="Ves un borrador.">You see a draft.</b> <span data-es="Una página real, en tu teléfono y tu computadora.">A real page, on your phone and your computer.</span></span></li>
-          <li><span><b data-es="Lo publicamos.">We go live.</b> <span data-es="En tu propia dirección, y te enseño a actualizarlo.">On your own address, with a walkthrough of how to update it.</span></span></li>
-        </ol>
+  <section class="block tint" id="contact">
+    <div class="wrap contact">
+      <div class="head" style="margin:0">
+        <h2 data-es="Cuéntame qué necesita tu negocio">Tell me what your business needs</h2>
+        <p data-es="Llena el formulario y prepara tu mensaje. Te respondo con ideas y una cotización, sin compromiso.">Fill in the form and prepare your message. I'll reply with ideas and a quote, no obligation.</p>
       </div>
       <form id="hireForm" novalidate>
         <div class="two">
@@ -416,8 +351,8 @@ textarea.field{min-height:96px;resize:vertical}
         <label for="hNeed"><span data-es="¿Qué necesitas?">What do you need?</span>
           <select class="field" id="hNeed">
             <option data-es="Un sitio para mi negocio">A website for my business</option>
-            <option data-es="Sitio + reservas y pagos">Site + booking and payments</option>
-            <option data-es="Una aplicación web a medida">A custom web app</option>
+            <option data-es="Sitio + reservas y pagos">Website + booking and payments</option>
+            <option data-es="Un sistema a mi medida">A custom system</option>
             <option data-es="Todavía no estoy seguro">Not sure yet</option>
           </select>
         </label>
@@ -428,92 +363,16 @@ textarea.field{min-height:96px;resize:vertical}
           <div class="btns"><button class="btn" type="button" id="hCopy" data-es="Copiar mensaje">Copy message</button></div>
         </div>
       </form>
-    </section>
+    </div>
+  </section>
+</main>
 
-    <section class="t hood">
-      <h3 data-es="Tecnologías y conexiones con las que trabajo">Tools and connections I work with</h3>
-      <p class="muted" data-es="Todo lo que aparece aquí está construido en alguno de mis tres productos.">Everything here is built into one of my three products.</p>
-      <div class="kit" data-kit>
-        <div class="kitg"><span class="stepl" data-es="Lenguajes y front end">Languages + front end</span><ul class="kitl">
-          <li><i style="background:#e44d26;color:#ffffff" aria-hidden="true">H</i>HTML</li>
-          <li><i style="background:#2965f1;color:#ffffff" aria-hidden="true">C</i>CSS</li>
-          <li><i style="background:#f0db4f;color:#15171a" aria-hidden="true">JS</i>JavaScript</li>
-          <li><i style="background:#3178c6;color:#ffffff" aria-hidden="true">TS</i>TypeScript</li>
-          <li><i style="background:#00758f;color:#ffffff" aria-hidden="true">SQL</i>SQL</li>
-          <li><i style="background:#61dafb;color:#15171a" aria-hidden="true">R</i>React</li>
-          <li><i style="background:#ffffff;color:#15171a" aria-hidden="true">N</i>Next.js</li>
-          <li><i style="background:#38bdf8;color:#15171a" aria-hidden="true">TW</i>Tailwind CSS</li>
-        </ul></div>
-        <div class="kitg"><span class="stepl" data-es="Datos y hospedaje">Database + hosting</span><ul class="kitl">
-          <li><i style="background:#336791;color:#ffffff" aria-hidden="true">PG</i>PostgreSQL</li>
-          <li><i style="background:#3ecf8e;color:#15171a" aria-hidden="true">S</i>Supabase</li>
-          <li><i style="background:#00c7b7;color:#ffffff" aria-hidden="true">N</i>Netlify</li>
-          <li><i style="background:#f0f0f0;color:#15171a" aria-hidden="true">GH</i>GitHub</li>
-          <li><i style="background:#c9d1d9;color:#15171a" aria-hidden="true">GP</i>GitHub Pages</li>
-          <li><i style="background:#ffffff;color:#15171a" aria-hidden="true">V</i>Vercel</li>
-          <li><i style="background:#21759b;color:#ffffff" aria-hidden="true">W</i>WordPress</li>
-          <li><i style="background:#673de6;color:#ffffff" aria-hidden="true">H</i>Hostinger DNS</li>
-        </ul></div>
-        <div class="kitg"><span class="stepl" data-es="Pagos y contabilidad">Payments + accounting</span><ul class="kitl">
-          <li><i style="background:#635bff;color:#ffffff" aria-hidden="true">S</i>Stripe</li>
-          <li><i style="background:#e6e6e6;color:#15171a" aria-hidden="true">SQ</i>Square</li>
-          <li><i style="background:#2ca01c;color:#ffffff" aria-hidden="true">QB</i>QuickBooks Online</li>
-          <li><i style="background:#13b5ea;color:#ffffff" aria-hidden="true">X</i>Xero</li>
-          <li><i style="background:#0070ba;color:#ffffff" aria-hidden="true">PP</i>PayPal</li>
-          <li><i style="background:#3d95ce;color:#ffffff" aria-hidden="true">V</i>Venmo</li>
-          <li><i style="background:#00d632;color:#ffffff" aria-hidden="true">$</i>Cash App</li>
-          <li><i style="background:#6d1ed4;color:#ffffff" aria-hidden="true">Z</i>Zelle</li>
-        </ul></div>
-        <div class="kitg"><span class="stepl" data-es="Calendarios y correo">Calendars + email</span><ul class="kitl">
-          <li><i style="background:#4285f4;color:#ffffff" aria-hidden="true">GC</i>Google Calendar</li>
-          <li><i style="background:#ea4335;color:#ffffff" aria-hidden="true">GM</i>Gmail</li>
-          <li><i style="background:#0078d4;color:#ffffff" aria-hidden="true">O</i>Outlook / Microsoft 365</li>
-          <li><i style="background:#ff3b30;color:#ffffff" aria-hidden="true">AC</i>Apple Calendar</li>
-          <li><i style="background:#8e8e93;color:#ffffff" aria-hidden="true">iC</i>iCloud Mail</li>
-          <li><i style="background:#ffffff;color:#15171a" aria-hidden="true">R</i>Resend</li>
-        </ul></div>
-        <div class="kitg"><span class="stepl" data-es="Mensajes y llamadas">Texting + calls</span><ul class="kitl">
-          <li><i style="background:#f22f46;color:#ffffff" aria-hidden="true">T</i>Twilio SMS</li>
-          <li><i style="background:#f22f46;color:#ffffff" aria-hidden="true">TV</i>Twilio Voice</li>
-        </ul></div>
-        <div class="kitg"><span class="stepl" data-es="Formularios y reservas">Forms + booking apps</span><ul class="kitl">
-          <li><i style="background:#ff6100;color:#ffffff" aria-hidden="true">JF</i>Jotform</li>
-          <li><i style="background:#e5e5e5;color:#15171a" aria-hidden="true">TF</i>Typeform</li>
-          <li><i style="background:#f5f5f5;color:#15171a" aria-hidden="true">TL</i>Tally</li>
-          <li><i style="background:#7248b9;color:#ffffff" aria-hidden="true">GF</i>Google Forms</li>
-          <li><i style="background:#006bff;color:#ffffff" aria-hidden="true">CL</i>Calendly</li>
-          <li><i style="background:#bfc5cc;color:#15171a" aria-hidden="true">AS</i>Acuity Scheduling</li>
-        </ul></div>
-        <div class="kitg"><span class="stepl" data-es="Marketing y búsqueda">Marketing + search</span><ul class="kitl">
-          <li><i style="background:#ffe01b;color:#15171a" aria-hidden="true">MC</i>Mailchimp</li>
-          <li><i style="background:#e8e8e8;color:#15171a" aria-hidden="true">K</i>Klaviyo</li>
-          <li><i style="background:#1856ed;color:#ffffff" aria-hidden="true">CC</i>Constant Contact</li>
-          <li><i style="background:#4285f4;color:#ffffff" aria-hidden="true">SC</i>Google Search Console</li>
-          <li><i style="background:#34a853;color:#ffffff" aria-hidden="true">GB</i>Google Business Profile</li>
-        </ul></div>
-        <div class="kitg"><span class="stepl" data-es="Automatización e IA">Automation + AI</span><ul class="kitl">
-          <li><i style="background:#ff4f00;color:#ffffff" aria-hidden="true">Z</i>Zapier</li>
-          <li><i style="background:#6d00cc;color:#ffffff" aria-hidden="true">M</i>Make</li>
-          <li><i style="background:#ea4b71;color:#ffffff" aria-hidden="true">n8</i>n8n</li>
-          <li><i style="background:#c9d1d9;color:#15171a" aria-hidden="true">WH</i>Webhooks</li>
-          <li><i style="background:#d97757;color:#ffffff" aria-hidden="true">AI</i>Claude API</li>
-        </ul></div>
-        <div class="kitg"><span class="stepl" data-es="Mapas y pruebas">Maps + testing</span><ul class="kitl">
-          <li><i style="background:#7ebc6f;color:#15171a" aria-hidden="true">OS</i>OpenStreetMap</li>
-          <li><i style="background:#199900;color:#ffffff" aria-hidden="true">L</i>Leaflet</li>
-          <li><i style="background:#34a853;color:#ffffff" aria-hidden="true">GM</i>Google Maps</li>
-          <li><i style="background:#2ead33;color:#ffffff" aria-hidden="true">PW</i>Playwright</li>
-          <li><i style="background:#fcc72b;color:#15171a" aria-hidden="true">VT</i>Vitest</li>
-        </ul></div>
-      </div>
-    </section>
-
-    <footer class="foot">
-      <span>© 2026 Jan Hernandez</span>
-      <span><a href="https://www.petklndr.com">PetKlndr</a> · <a href="https://www.woofvio.com">Woofvio</a> · <a href="https://safepawsdogtraining.com">Safe Paws</a> · <a href="https://kingdom-peptides.com/products/">Kingdom Peptides</a></span>
-    </footer>
-  </main>
-</div>
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 Jan Hernandez</span>
+    <span><a href="https://www.petklndr.com">PetKlndr</a> · <a href="https://www.woofvio.com">Woofvio</a> · <a href="https://safepawsdogtraining.com">Safe Paws</a> · <a href="https://kingdom-peptides.com/products/">Kingdom Peptides</a></span>
+  </div>
+</footer>
 
 <script>
 (function(){
@@ -524,6 +383,7 @@ textarea.field{min-height:96px;resize:vertical}
   var langBtn=document.getElementById("lang");
   var nodes=[].slice.call(document.querySelectorAll("[data-es],[data-es-html]"));
   nodes.forEach(function(n){ if(n.hasAttribute("data-es-html")) n.setAttribute("data-en-html",n.innerHTML); else n.setAttribute("data-en",n.textContent); });
+  var hOut=document.getElementById("hOut");
   function applyLang(){
     nodes.forEach(function(n){
       if(n.hasAttribute("data-es-html")) n.innerHTML=es?n.getAttribute("data-es-html"):n.getAttribute("data-en-html");
@@ -532,54 +392,9 @@ textarea.field{min-height:96px;resize:vertical}
     root.lang=es?"es":"en";
     langBtn.textContent=es?"EN":"ES";
     langBtn.setAttribute("aria-label",es?"Switch to English":"Cambiar a español");
-    food(); drawBooking(); if(!hOut.hidden) buildMsg();
+    drawBooking(); if(!hOut.hidden) buildMsg();
   }
   langBtn.addEventListener("click",function(){es=!es;applyLang()});
-
-  /* count-up numbers (final value is already in the page) */
-  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if(!reduce){
-    [].forEach.call(document.querySelectorAll("[data-count]"),function(el){
-      var end=+el.getAttribute("data-count"),suf=el.getAttribute("data-suffix")||"",t0=null;
-      function step(t){ if(!t0)t0=t; var k=Math.min(1,(t-t0)/900),v=Math.round(end*(1-Math.pow(1-k,3))); el.textContent=v.toLocaleString("en-US")+(k===1?suf:""); if(k<1)requestAnimationFrame(step); }
-      requestAnimationFrame(step);
-    });
-  }
-
-  /* tiles ease in as they come into view; nothing stays hidden */
-  if(!reduce && "IntersectionObserver" in window){
-    var tiles=[].slice.call(document.querySelectorAll(".t")), vh=window.innerHeight;
-    var io=new IntersectionObserver(function(en){en.forEach(function(e){ if(e.isIntersecting){e.target.classList.remove("pre");io.unobserve(e.target)} })},{rootMargin:"0px 0px -6% 0px"});
-    tiles.forEach(function(t){ if(t.getBoundingClientRect().top>vh*0.92){t.classList.add("pre");io.observe(t)} });
-    setTimeout(function(){tiles.forEach(function(t){t.classList.remove("pre")})},6000);
-  }
-
-  /* project preview tabs */
-  [].forEach.call(document.querySelectorAll("[data-view]"),function(v){
-    var stage=v.querySelector("[data-stage]"),img=stage.querySelector("img"),bar=v.querySelector("[data-urlbar]"),tabs=[].slice.call(v.querySelectorAll(".tab"));
-    tabs.forEach(function(tb){tb.addEventListener("click",function(){
-      tabs.forEach(function(x){x.setAttribute("aria-selected",x===tb?"true":"false")});
-      img.src=tb.getAttribute("data-src"); img.alt="PetKlndr: "+tb.getAttribute("data-en");
-      stage.classList.toggle("phone",!!tb.getAttribute("data-phone")); bar.textContent=tb.getAttribute("data-url");
-    })});
-  });
-
-  /* Woofvio live demo */
-  var foods=[
-    ["Carrots","Zanahorias","yes","Yes","Sí","Raw or cooked, cut to a safe size.","Crudas o cocidas, en trozos seguros."],
-    ["Blueberries","Arándanos","yes","Yes","Sí","A few at a time is plenty.","Unos pocos a la vez es suficiente."],
-    ["Cheese","Queso","care","Careful","Con cuidado","Small amounts. Many dogs don't handle dairy well.","En poca cantidad. Muchos perros no toleran los lácteos."],
-    ["Peanut butter","Crema de cacahuate","care","Careful","Con cuidado","Only if the label has no xylitol.","Solo si la etiqueta no tiene xilitol."],
-    ["Grapes","Uvas","no","No","No","Can cause kidney failure, even in small amounts. Call your vet.","Pueden causar falla renal, incluso en poca cantidad. Llama a tu veterinario."],
-    ["Chocolate","Chocolate","no","No","No","Toxic to dogs. Darker chocolate is more dangerous.","Es tóxico para los perros. Entre más oscuro, más peligroso."]
-  ];
-  var sel=document.getElementById("food"),fout=document.getElementById("foodOut"),pick=4;
-  function food(){
-    sel.textContent=""; foods.forEach(function(f,i){var o=document.createElement("option");o.value=i;o.textContent=T(f[0],f[1]);sel.appendChild(o)}); sel.value=pick;
-    var f=foods[pick]; fout.className="verdict "+f[2]; fout.textContent="";
-    var b=document.createElement("b"); b.textContent=T(f[3],f[4]); var s=document.createElement("span"); s.textContent=T(f[5],f[6]); fout.appendChild(b); fout.appendChild(s);
-  }
-  sel.addEventListener("change",function(){pick=+sel.value;food()});
 
   /* booking demo */
   var svcs=[["Free consultation · 30 min","Consulta gratis · 30 min"],["Standard visit · 60 min","Visita estándar · 60 min"],["Full service · 90 min","Servicio completo · 90 min"]];
@@ -600,13 +415,13 @@ textarea.field{min-height:96px;resize:vertical}
     var b=document.createElement("b"); b.textContent=T("Booked. See you then.","Reservado. Nos vemos.");
     var p=document.createElement("span"); p.textContent=T(svcs[st.s][0],svcs[st.s][1])+" · "+dayLabel(days[st.d])+" · "+times[st.t];
     var n=document.createElement("span"); n.className="note"; n.textContent=T("On a real site the customer gets a confirmation email with a calendar invite, a reminder the evening before, and the visit lands on your calendar.","En un sitio real el cliente recibe un correo de confirmación con invitación de calendario, un recordatorio la tarde anterior, y la visita aparece en tu calendario.");
-    var again=document.createElement("button"); again.type="button"; again.className="btn"; again.textContent=T("Book another","Reservar otra"); again.addEventListener("click",function(){done.hidden=true;bk.hidden=false});
+    var again=document.createElement("button"); again.type="button"; again.className="btn"; again.style.justifySelf="start"; again.textContent=T("Book another","Reservar otra"); again.addEventListener("click",function(){done.hidden=true;bk.hidden=false});
     done.appendChild(b);done.appendChild(p);done.appendChild(n);done.appendChild(again);
   }
   document.getElementById("bkGo").addEventListener("click",function(){bk.hidden=true;done.hidden=false;showDone()});
 
-  /* hire form: prepares a message to copy (no server behind this page) */
-  var form=document.getElementById("hireForm"),hOut=document.getElementById("hOut"),hText=document.getElementById("hText"),hCopy=document.getElementById("hCopy");
+  /* contact form: prepares a message to copy (no server behind this page) */
+  var form=document.getElementById("hireForm"),hText=document.getElementById("hText"),hCopy=document.getElementById("hCopy");
   function buildMsg(){
     var name=document.getElementById("hName").value.trim(),biz=document.getElementById("hBiz").value.trim(),need=document.getElementById("hNeed"),msg=document.getElementById("hMsg").value.trim();
     if(!name) return false;
@@ -620,12 +435,12 @@ textarea.field{min-height:96px;resize:vertical}
     hOut.hidden=false;
   });
   hCopy.addEventListener("click",function(){
-    var done=function(){hCopy.textContent=T("Copied","Copiado")};
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(hText.textContent).then(done,function(){var r=document.createRange();r.selectNodeContents(hText);var s=getSelection();s.removeAllRanges();s.addRange(r)})}
-    else{var r=document.createRange();r.selectNodeContents(hText);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+    var ok=function(){hCopy.textContent=T("Copied","Copiado")};
+    var pick=function(){var r=document.createRange();r.selectNodeContents(hText);var s=getSelection();s.removeAllRanges();s.addRange(r)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(hText.textContent).then(ok,pick)} else pick();
   });
 
-  food(); drawBooking();
+  drawBooking();
 })();
 </script>
 </body>
