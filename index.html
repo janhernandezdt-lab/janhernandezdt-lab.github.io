@@ -341,7 +341,8 @@ textarea.field{min-height:110px;resize:vertical}
     <div class="wrap contact">
       <div class="head" style="margin:0">
         <h2 data-es="Cuéntame qué necesita tu negocio">Tell me what your business needs</h2>
-        <p data-es="Llena el formulario y prepara tu mensaje. Te respondo con ideas y una cotización, sin compromiso.">Fill in the form and prepare your message. I'll reply with ideas and a quote, no obligation.</p>
+        <p data-es="Llena el formulario y envíame tu mensaje. Te respondo con ideas y una cotización, sin compromiso.">Fill in the form and send me your message. I'll reply with ideas and a quote, no obligation.</p>
+        <p style="margin-top:18px"><span class="muted" data-es="O escríbeme directo:">Or write to me directly:</span><br><a class="go" id="mailLink" href="mailto:janhernandezdt@gmail.com">janhernandezdt@gmail.com</a></p>
       </div>
       <form id="hireForm" novalidate>
         <div class="two">
@@ -357,8 +358,9 @@ textarea.field{min-height:110px;resize:vertical}
           </select>
         </label>
         <label for="hMsg"><span data-es="Cuéntame un poco más">Tell me a bit more</span><textarea class="field" id="hMsg"></textarea></label>
-        <div class="btns"><button class="btn s" type="submit" data-es="Preparar mi mensaje">Prepare my message</button></div>
+        <div class="btns"><button class="btn s" type="submit" data-es="Enviar mi mensaje">Send my message</button></div>
         <div class="msg" id="hOut" hidden aria-live="polite">
+          <p class="note" data-es="Se abrió tu aplicación de correo con el mensaje listo: solo toca Enviar. Si no se abrió, copia el mensaje y envíalo a janhernandezdt@gmail.com.">Your email app opened with the message ready: just tap Send. If it didn't open, copy the message and send it to janhernandezdt@gmail.com.</p>
           <pre id="hText"></pre>
           <div class="btns"><button class="btn" type="button" id="hCopy" data-es="Copiar mensaje">Copy message</button></div>
         </div>
@@ -420,7 +422,7 @@ textarea.field{min-height:110px;resize:vertical}
   }
   document.getElementById("bkGo").addEventListener("click",function(){bk.hidden=true;done.hidden=false;showDone()});
 
-  /* contact form: prepares a message to copy (no server behind this page) */
+  /* contact form: opens the visitor's email app with the message written (no server behind this page); Copy stays as a fallback */
   var form=document.getElementById("hireForm"),hText=document.getElementById("hText"),hCopy=document.getElementById("hCopy");
   function buildMsg(){
     var name=document.getElementById("hName").value.trim(),biz=document.getElementById("hBiz").value.trim(),need=document.getElementById("hNeed"),msg=document.getElementById("hMsg").value.trim();
@@ -433,6 +435,8 @@ textarea.field{min-height:110px;resize:vertical}
     if(!buildMsg()){document.getElementById("hName").focus();return}
     hCopy.textContent=T("Copy message","Copiar mensaje");
     hOut.hidden=false;
+    var biz=document.getElementById("hBiz").value.trim();
+    location.href="mailto:janhernandezdt@gmail.com?subject="+encodeURIComponent(T("Website quote","Cotización de sitio web")+(biz?": "+biz:""))+"&body="+encodeURIComponent(hText.textContent);
   });
   hCopy.addEventListener("click",function(){
     var ok=function(){hCopy.textContent=T("Copied","Copiado")};
