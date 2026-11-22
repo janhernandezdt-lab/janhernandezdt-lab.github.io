@@ -116,6 +116,10 @@ button,input,select,textarea{font:inherit;color:inherit}
 .plain{grid-column:span 6;border-bottom:1px solid var(--rule);padding-block:22px;grid-template-columns:.9fr 1.1fr;column-gap:20px}
 .plain h3{font-size:20px}
 .plain p{color:var(--muted);font-size:16px}
+.aside{grid-column:span 5;margin-block:44px;align-content:center;gap:14px}
+.aside p{color:var(--muted)}
+.wide{grid-column:span 12;padding-top:30px}
+.plain.ask h3{font-weight:500}
 .hood{grid-column:span 12;padding-top:44px}
 .how{grid-column:span 12;padding-top:44px;max-width:760px}
 .kit{display:grid;gap:22px;margin-top:6px}
@@ -157,7 +161,8 @@ textarea.field{min-height:96px;resize:vertical}
 
 @media (max-width:900px){
   .board{column-gap:20px}
-  .small,.book,.hood,.how,.plain{grid-column:span 12}
+  .small,.book,.hood,.how,.plain,.aside{grid-column:span 12}
+  .aside{margin-block:0 20px}
   .num{grid-column:span 6}
   .pack{grid-column:span 12}
   .case,.hire{grid-template-columns:1fr}
@@ -187,6 +192,7 @@ textarea.field{min-height:96px;resize:vertical}
   <header class="top">
     <a class="brand" href="#top"><i></i>Jan Hernandez</a>
     <nav aria-label="Sections">
+      <a href="#help" data-es="Cómo ayudo">How I help</a>
       <a href="#work" data-es="Proyectos">Work</a>
       <a href="#try" data-es="Pruébalo">Try it</a>
       <a href="#build" data-es="Qué construyo">What I build</a>
@@ -215,6 +221,23 @@ textarea.field{min-height:96px;resize:vertical}
       <h3 data-es="Con quién trabajo">Who I work with</h3>
       <p class="muted" data-es="Negocios de servicios, tiendas locales, estudios y organizaciones sin fines de lucro: equipos pequeños que quieren más clientes y menos trabajo repetido.">Service businesses, local shops, studios and nonprofits: small teams that want more customers and less busywork.</p>
     </section>
+
+    <div class="sec" id="help">
+      <h2 data-es="Cómo puedo ayudarte">How I can help</h2>
+      <p data-es="Si algo de esto se parece a tu semana, lo puedo resolver.">If any of this sounds like your week, I can fix it.</p>
+    </div>
+    <div class="t plain ask" data-help><h3 data-es="Los clientes tienen que llamar para reservar, y pierdes llamadas mientras trabajas.">Customers have to call to book, and you miss calls while you work.</h3><p data-es="Reservas en línea en tu sitio que llegan directo a tu calendario.">Online booking on your site that lands straight in your calendar.</p></div>
+    <div class="t plain ask" data-help><h3 data-es="Envías facturas a mano y persigues los pagos.">You send invoices by hand and chase payments.</h3><p data-es="Facturas que se envían solas y pagos con tarjeta en tu propio sitio.">Invoices that send themselves and card payments on your own site.</p></div>
+    <div class="t plain ask" data-help><h3 data-es="La gente olvida sus citas.">People forget their appointments.</h3><p data-es="Recordatorios y confirmaciones automáticos por correo y mensaje de texto.">Automatic reminders and confirmations by email and text.</p></div>
+    <div class="t plain ask" data-help><h3 data-es="Tu sitio se ve bien pero no trae clientes.">Your website looks fine but doesn't bring in customers.</h3><p data-es="Páginas hechas para que Google las encuentre, en inglés, español o ambos.">Pages built so Google can find them, in English, Spanish or both.</p></div>
+    <div class="t plain ask" data-help><h3 data-es="Manejas el negocio con cinco aplicaciones y una libreta.">You run the business from five apps and a notebook.</h3><p data-es="Un solo sistema hecho para la forma en que trabaja tu negocio.">One system made for the way your business works.</p></div>
+    <div class="t plain ask" data-help><h3 data-es="Respondes las mismas preguntas todo el día.">You answer the same questions all day.</h3><p data-es="Una cuenta donde cada cliente ve sus reservas, facturas y novedades.">A login where each customer sees their own bookings, invoices and updates.</p></div>
+    <div class="t wide">
+      <div class="btns">
+        <a class="btn s" href="#contact" data-es="Cuéntame qué necesitas">Tell me what you need</a>
+        <a class="btn" href="#work" data-es="Ver los proyectos">See the work</a>
+      </div>
+    </div>
 
     <div class="sec" id="work">
       <h2 data-es="Proyectos">The work</h2>
@@ -300,6 +323,11 @@ textarea.field{min-height:96px;resize:vertical}
       </div>
     </article>
 
+    <div class="t aside" data-book-note>
+      <h3 data-es="Tus clientes reservan sin llamarte.">Your customers book without calling you.</h3>
+      <p data-es="Eligen el servicio, el día y la hora. La cita llega a tu calendario y ellos reciben una confirmación y un recordatorio.">They pick the service, the day and the time. The appointment lands in your calendar, and they get a confirmation and a reminder.</p>
+      <p data-es="Pruébalo aquí: así se siente en un sitio que yo construyo.">Try it here: this is how it feels on a site I build.</p>
+    </div>
     <section class="t book" id="try" aria-label="Booking demo">
       <span class="mono" data-es="Pruébalo · demo de reservas">Try it · booking demo</span>
       <h3 data-es="Así reserva un cliente en un sitio que yo construyo.">This is how a customer books on a site I build.</h3>
