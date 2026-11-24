@@ -158,6 +158,9 @@ textarea.field{min-height:110px;resize:vertical}
 .who{display:flex;gap:16px;align-items:center}
 .avatar{flex:none;width:64px;height:64px;border-radius:50%;background:var(--a);color:var(--on-a);display:grid;place-items:center;font:700 22px var(--display)}
 section[id],div[id="top"]{scroll-margin-top:76px}
+.price{display:grid;gap:2px;margin:2px 0 4px}
+.price b{font:800 28px/1.15 var(--display);color:var(--fg);letter-spacing:-.02em}
+.price span{font-size:15px;color:var(--muted)}
 .cta-bar{display:none}
 @media (max-width:860px){.about{grid-template-columns:1fr;gap:26px}}
 @media (max-width:720px){
@@ -343,12 +346,13 @@ section[id],div[id="top"]{scroll-margin-top:76px}
     <div class="wrap">
       <div class="head">
         <h2 data-es="Elige por dónde empezar">Pick where to start</h2>
-        <p data-es="Cada proyecto recibe su propia cotización, según lo que necesites.">Every project gets its own quote, based on what you need.</p>
+        <p data-es="Rangos de precio claros. Tu cotización exacta es gratis y depende de lo que necesites.">Clear price ranges. Your exact quote is free and depends on what you need.</p>
       </div>
       <div class="grid3">
         <div class="card">
           <span class="kind" data-es="Empezar">Starter</span>
           <h3 data-es="Un sitio para tu negocio">A website for your business</h3>
+          <p class="price" data-price><b>$300 – $1,000</b><span data-es="Inicio, servicios, sobre nosotros y contacto: alrededor de $500.">Home, services, about and contact: around $500.</span></p>
           <ul class="list">
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Tu propio diseño, no una plantilla">Your own design, not a template</span></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Pensado primero para el teléfono">Built for phones first</span></li>
@@ -358,6 +362,7 @@ section[id],div[id="top"]{scroll-margin-top:76px}
         <div class="card" style="border-color:var(--a);box-shadow:var(--shadow)">
           <span class="kind" data-es="Crecer">Growth</span>
           <h3 data-es="Sitio + reservas y pagos">Website + booking and payments</h3>
+          <p class="price" data-price><b>$1,000 – $3,000</b><span data-es="Con reservas en línea o tienda en línea.">With online booking or an online store.</span></p>
           <ul class="list">
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Todo lo del sitio básico">Everything in Starter</span></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Tus clientes reservan y pagan en tu sitio">Customers book and pay on your site</span></li>
@@ -367,6 +372,7 @@ section[id],div[id="top"]{scroll-margin-top:76px}
         <div class="card">
           <span class="kind" data-es="A medida">Custom</span>
           <h3 data-es="Un sistema a tu medida">A system made for you</h3>
+          <p class="price" data-price><b>$4,000 – $5,000</b><span data-es="Aplicaciones y sistemas a medida.">Apps and custom systems.</span></p>
           <ul class="list">
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Cuentas para clientes y paneles">Customer logins and dashboards</span></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Herramientas que te ahorran tiempo">Tools that save you time</span></li>
@@ -407,7 +413,7 @@ section[id],div[id="top"]{scroll-margin-top:76px}
         <h2 data-es="Preguntas frecuentes">Questions people ask</h2>
       </div>
       <div class="faq" data-faq>
-        <details><summary data-es="¿Cuánto cuesta?">How much does it cost?</summary><p data-es="Cada negocio es distinto, así que cada proyecto recibe su propia cotización fija después de una llamada breve. La cotización es gratis.">Every business is different, so each project gets its own fixed quote after a short call. The quote is free.</p></details>
+        <details><summary data-es="¿Cuánto cuesta?">How much does it cost?</summary><p data-es="Los sitios web sencillos cuestan entre $300 y $1,000; uno con inicio, servicios, sobre nosotros y contacto ronda los $500. Los sitios con reservas en línea o tienda en línea cuestan entre $1,000 y $3,000. Las aplicaciones cuestan entre $4,000 y $5,000. Recibes una cotización fija y gratis después de una llamada breve.">Simple websites are $300 to $1,000; one with a home, services, about and contact page is around $500. Websites with online booking or an online store are $1,000 to $3,000. Apps are $4,000 to $5,000. You get a free, fixed quote after a short call.</p></details>
         <details><summary data-es="¿Cuánto tarda?">How long does it take?</summary><p data-es="Depende de lo que necesites. La mayoría de los sitios web están funcionando en dos a cinco días. Las aplicaciones y los sistemas a medida tardan más porque cada función se prueba antes de publicar, normalmente de tres a seis semanas.">It depends on what you need. Most websites are up and running in two to five days. Apps and custom systems take longer because every feature is tested before launch, usually three to six weeks.</p></details>
         <details><summary data-es="¿El sitio es mío?">Do I own my site?</summary><p data-es="Sí. La dirección web, el contenido y el sitio son tuyos. Si algún día cambias de proveedor, te los llevas contigo.">Yes. The web address, the content and the site are yours. If you ever move on, you take them with you.</p></details>
         <details><summary data-es="¿Puedes arreglar el sitio que ya tengo?">Can you fix the website I already have?</summary><p data-es="Sí, y el primer paso es gratis. Envíame tu sitio y te digo tres cosas que te están costando clientes. Después tú decides qué hacer.">Yes, and the first step is free. Send me your site and I'll tell you three things that are costing you customers. Then you decide what to do next.</p></details>
