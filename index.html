@@ -145,6 +145,10 @@ textarea.field{min-height:110px;resize:vertical}
   .card,.demo,form,.steps li{padding:22px}
   .try,.contact{gap:26px}
 }
+.review{background:var(--a-soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.review .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px 28px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
+.review strong{display:block;font-family:var(--display);font-size:19px;color:var(--fg)}
+.review span{color:var(--muted)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
@@ -183,6 +187,15 @@ textarea.field{min-height:110px;resize:vertical}
     </div>
   </div>
 
+  <div class="review" data-review>
+    <div class="wrap">
+      <div>
+        <strong data-es="¿Ya tienes un sitio web?">Already have a website?</strong>
+        <span data-es="Lo reviso gratis y te digo tres cosas que te están costando clientes. Sin compromiso.">I'll review it for free and tell you three things that are costing you customers. No strings attached.</span>
+      </div>
+      <a class="btn s" href="#contact" id="reviewGo" data-es="Quiero mi revisión gratis">Get my free review</a>
+    </div>
+  </div>
   <section class="block" id="services">
     <div class="wrap">
       <div class="head">
@@ -262,11 +275,11 @@ textarea.field{min-height:110px;resize:vertical}
           <a class="go" href="https://safepawsdogtraining.com" data-es="Visitar el sitio →">Visit the site →</a>
         </article>
         <article class="card" data-project="kingdom-peptides">
-          <span class="kind" data-es="Sitio de catálogo">Catalog website</span>
+          <span class="kind" data-es="Sitio para un cliente">Client website</span>
           <h3>Kingdom Peptides</h3>
-          <p data-es="Un catálogo con una página por producto y un botón para solicitar precio, en lugar de una lista de precios pública.">A catalog with a page for each product and a Request Pricing button, instead of a public price list.</p>
-          <p><b data-es="Resultado: ">Result: </b><span data-es="en línea en su propio dominio.">live on its own domain.</span></p>
-          <a class="go" href="https://kingdom-peptides.com/products/" data-es="Visitar el sitio →">Visit the site →</a>
+          <p data-es="Rediseño completo para un cliente: nueva imagen, una página por producto, un formulario para pedir precio de varios productos a la vez y una sección de aprendizaje de 19 páginas con buscador.">A full redesign for a client: a new look, a page for each product, a form to request pricing on several products at once, and a 19-page learning section with search.</p>
+          <p><b data-es="Resultado: ">Result: </b><span data-es="carga en menos de dos segundos en el teléfono y saca más de 95 de 100 en la prueba de velocidad de Google.">loads in under two seconds on a phone and scores 95+ out of 100 on Google's speed test.</span></p>
+          <a class="go" href="https://kingdom-peptides.com" data-es="Visitar el sitio →">Visit the site →</a>
         </article>
       </div>
     </div>
@@ -396,7 +409,7 @@ textarea.field{min-height:110px;resize:vertical}
 <footer class="foot">
   <div class="wrap">
     <span>© 2026 Jan Hernandez</span>
-    <span><a href="https://www.petklndr.com">PetKlndr</a> · <a href="https://www.woofvio.com">Woofvio</a> · <a href="https://safepawsdogtraining.com">Safe Paws</a> · <a href="https://kingdom-peptides.com/products/">Kingdom Peptides</a></span>
+    <span><a href="https://www.petklndr.com">PetKlndr</a> · <a href="https://www.woofvio.com">Woofvio</a> · <a href="https://safepawsdogtraining.com">Safe Paws</a> · <a href="https://kingdom-peptides.com">Kingdom Peptides</a></span>
   </div>
 </footer>
 
@@ -444,6 +457,7 @@ textarea.field{min-height:110px;resize:vertical}
     var again=document.createElement("button"); again.type="button"; again.className="btn"; again.style.justifySelf="start"; again.textContent=T("Book another","Reservar otra"); again.addEventListener("click",function(){done.hidden=true;bk.hidden=false});
     done.appendChild(b);done.appendChild(p);done.appendChild(n);done.appendChild(again);
   }
+  var rg=document.getElementById("reviewGo"); if(rg){rg.addEventListener("click",function(){var n=document.getElementById("hNeed"); if(n){n.selectedIndex=3;}});}
   document.getElementById("bkGo").addEventListener("click",function(){bk.hidden=true;done.hidden=false;showDone()});
 
   /* contact form: opens the visitor's email app with the message written (no server behind this page); Copy stays as a fallback */
