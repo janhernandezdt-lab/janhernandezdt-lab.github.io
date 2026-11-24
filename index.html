@@ -10,7 +10,9 @@
 <meta property="og:image" content="https://janhernandezdt-lab.github.io/img/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffffff">
-<title>Jan Hernandez</title>
+<link rel="canonical" href="https://janhernandezdt-lab.github.io/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Jan Hernandez","url":"https://janhernandezdt-lab.github.io/","image":"https://janhernandezdt-lab.github.io/img/share.jpg","description":"Jan Hernandez builds websites, web apps and systems for businesses with purpose: booking, payments and the tools that run the business. See the work and hire him.","knowsLanguage":["en","es"]}</script>
+<title>Jan Hernandez · Websites, booking and payment systems for small businesses</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <style>
@@ -149,6 +151,21 @@ textarea.field{min-height:110px;resize:vertical}
 .review .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px 28px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
 .review strong{display:block;font-family:var(--display);font-size:19px;color:var(--fg)}
 .review span{color:var(--muted)}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.about>div:first-child{display:grid;gap:16px}
+.about p{color:var(--muted);font-size:18px}
+.about h2{font-size:clamp(27px,3vw,36px);font-weight:700}
+.who{display:flex;gap:16px;align-items:center}
+.avatar{flex:none;width:64px;height:64px;border-radius:50%;background:var(--a);color:var(--on-a);display:grid;place-items:center;font:700 22px var(--display)}
+section[id],div[id="top"]{scroll-margin-top:76px}
+.cta-bar{display:none}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:26px}}
+@media (max-width:720px){
+  .cta-bar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--rule);transition:transform .2s}
+  .cta-bar .btn{width:100%}
+  .cta-bar.off{transform:translateY(110%)}
+  body{padding-bottom:calc(74px + env(safe-area-inset-bottom,0px))}
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
@@ -160,6 +177,7 @@ textarea.field{min-height:110px;resize:vertical}
       <a class="l" href="#services" data-es="Servicios">Services</a>
       <a class="l" href="#work" data-es="Proyectos">Work</a>
       <a class="l" href="#how" data-es="Cómo funciona">How it works</a>
+      <a class="l" href="#about" data-es="Sobre mí">About</a>
       <button class="sw" id="lang" type="button" aria-label="Cambiar a español">ES</button>
       <a class="btn s" href="#contact" data-es="Pide tu cotización">Get a quote</a>
     </nav>
@@ -359,6 +377,30 @@ textarea.field{min-height:110px;resize:vertical}
     </div>
   </section>
 
+  <section class="block tint" id="about" data-about>
+    <div class="wrap">
+      <div class="about">
+        <div>
+          <div class="who"><span class="avatar" aria-hidden="true">JH</span><div><h2 data-es="Hola, soy Jan">Hi, I'm Jan</h2><span class="muted" data-es="Trabajas directamente conmigo">You work with me directly</span></div></div>
+          <p data-es="Construyo sitios web y sistemas para negocios, y tengo un negocio pequeño propio. Por eso sé lo que un dueño necesita de su sitio: clientes que puedan reservar y pagar sin una llamada, y menos trabajo repetido cada semana.">I build websites and systems for businesses, and I run a small business of my own. So I know what an owner needs from a site: customers who can book and pay without a phone call, and less repeated work every week.</p>
+          <p data-es="Hablas conmigo desde la primera llamada hasta el lanzamiento, en inglés o en español. Sin intermediarios y sin lenguaje técnico.">You talk to me from the first call to launch, in English or Spanish. No middlemen and no technical talk.</p>
+          <div class="btns"><a class="btn s" href="#contact" data-es="Cuéntame de tu negocio">Tell me about your business</a></div>
+        </div>
+        <div class="card" data-count-on>
+          <h3 data-es="Con lo que puedes contar">What you can count on</h3>
+          <ul class="list">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Una cotización fija antes de empezar">A fixed quote before any work starts</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Un borrador que funciona para revisar antes de publicar">A working draft to review before it goes live</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Cada función probada antes del lanzamiento">Every feature tested before launch</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Tu dirección web, tu contenido y tu sitio son completamente tuyos">Your web address, content and site are fully yours</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Pensado primero para el teléfono, en inglés y español">Built for phones first, in English and Spanish</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-es="Te enseño a actualizarlo por tu cuenta">A walkthrough of how to update it yourself</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="block" id="faq">
     <div class="wrap">
       <div class="head">
@@ -405,6 +447,7 @@ textarea.field{min-height:110px;resize:vertical}
     </div>
   </section>
 </main>
+<div class="cta-bar" id="ctaBar" data-cta-bar><a class="btn s" href="#contact" data-es="Pide una cotización gratis">Get a free quote</a></div>
 
 <footer class="foot">
   <div class="wrap">
@@ -457,6 +500,8 @@ textarea.field{min-height:110px;resize:vertical}
     var again=document.createElement("button"); again.type="button"; again.className="btn"; again.style.justifySelf="start"; again.textContent=T("Book another","Reservar otra"); again.addEventListener("click",function(){done.hidden=true;bk.hidden=false});
     done.appendChild(b);done.appendChild(p);done.appendChild(n);done.appendChild(again);
   }
+  var cb=document.getElementById("ctaBar"),ct=document.getElementById("contact");
+  if(cb&&ct&&"IntersectionObserver" in window){new IntersectionObserver(function(e){cb.classList.toggle("off",e[0].isIntersecting)},{threshold:.05}).observe(ct);}
   var rg=document.getElementById("reviewGo"); if(rg){rg.addEventListener("click",function(){var n=document.getElementById("hNeed"); if(n){n.selectedIndex=3;}});}
   document.getElementById("bkGo").addEventListener("click",function(){bk.hidden=true;done.hidden=false;showDone()});
 
