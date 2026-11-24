@@ -161,6 +161,11 @@ section[id],div[id="top"]{scroll-margin-top:76px}
 .price{display:grid;gap:2px;margin:2px 0 4px}
 .price b{font:800 28px/1.15 var(--display);color:var(--fg);letter-spacing:-.02em}
 .price span{font-size:15px;color:var(--muted)}
+.next{counter-reset:n;display:grid;gap:10px;margin-top:22px}
+.next li{counter-increment:n;display:grid;grid-template-columns:30px 1fr;column-gap:12px;align-items:start}
+.next li::before{content:counter(n);grid-row:span 2;width:30px;height:30px;border-radius:50%;background:var(--a-soft);color:var(--a);display:grid;place-items:center;font:700 14px var(--display)}
+.next b{font-weight:600}
+.next span{color:var(--muted);font-size:16px}
 .cta-bar{display:none}
 @media (max-width:860px){.about{grid-template-columns:1fr;gap:26px}}
 @media (max-width:720px){
@@ -390,6 +395,7 @@ section[id],div[id="top"]{scroll-margin-top:76px}
           <div class="who"><span class="avatar" aria-hidden="true">JH</span><div><h2 data-es="Hola, soy Jan">Hi, I'm Jan</h2><span class="muted" data-es="Trabajas directamente conmigo">You work with me directly</span></div></div>
           <p data-es="Construyo sitios web y sistemas para negocios, y tengo un negocio pequeño propio. Por eso sé lo que un dueño necesita de su sitio: clientes que puedan reservar y pagar sin una llamada, y menos trabajo repetido cada semana.">I build websites and systems for businesses, and I run a small business of my own. So I know what an owner needs from a site: customers who can book and pay without a phone call, and less repeated work every week.</p>
           <p data-es="Hablas conmigo desde la primera llamada hasta el lanzamiento, en inglés o en español. Sin intermediarios y sin lenguaje técnico.">You talk to me from the first call to launch, in English or Spanish. No middlemen and no technical talk.</p>
+          <p data-who><b style="color:var(--fg)" data-es="Con quién trabajo: ">Who I work with: </b><span data-es="negocios de servicios, tiendas locales, estudios y organizaciones sin fines de lucro. Equipos pequeños que quieren más clientes y menos trabajo repetido.">service businesses, local shops, studios and nonprofits. Small teams that want more customers and less busywork.</span></p>
           <div class="btns"><a class="btn s" href="#contact" data-es="Cuéntame de tu negocio">Tell me about your business</a></div>
         </div>
         <div class="card" data-count-on>
@@ -426,6 +432,11 @@ section[id],div[id="top"]{scroll-margin-top:76px}
       <div class="head" style="margin:0">
         <h2 data-es="Cuéntame qué necesita tu negocio">Tell me what your business needs</h2>
         <p data-es="Llena el formulario y envíame tu mensaje. Te respondo con ideas y una cotización, sin compromiso.">Fill in the form and send me your message. I'll reply with ideas and a quote, no obligation.</p>
+        <ol class="next" data-next>
+          <li><b data-es="Te respondo">I reply</b><span data-es="con ideas para tu negocio.">with ideas for your business.</span></li>
+          <li><b data-es="Hablamos un momento">We have a short call</b><span data-es="para entender qué necesitas.">to understand what you need.</span></li>
+          <li><b data-es="Recibes una cotización fija">You get a fixed quote</b><span data-es="y tú decides. Sin compromiso.">and you decide. No obligation.</span></li>
+        </ol>
         <p style="margin-top:18px"><span class="muted" data-es="O escríbeme directo:">Or write to me directly:</span><br><a class="go" id="mailLink" href="mailto:janhernandezdt@gmail.com">janhernandezdt@gmail.com</a></p>
       </div>
       <form id="hireForm" novalidate>
